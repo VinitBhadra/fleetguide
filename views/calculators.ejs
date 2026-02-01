@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculators - FleetGuide.in</title>
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="logo">FleetGuide.in</a>
+      <ul class="nav-links">
+        <li><a href="/gps-guides">GPS Guides</a></li>
+        <li><a href="/transport-rules">Transport Rules</a></li>
+        <li><a href="/calculators">Calculators</a></li>
+        <li><a href="/fleet-reviews">Fleet Reviews</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Fleet Cost Calculators</h1>
+      <p>Free tools to calculate fuel costs, trip expenses, and operational efficiency</p>
+    </section>
+
+    <section class="calculators-section">
+      <div class="calculators-grid">
+        <!-- All calculator cards from index page -->
+        <div class="calculator-card">
+          <h3>Fuel Cost Calculator</h3>
+          <p>Calculate fuel consumption and costs for your trips</p>
+          
+          <form id="fuelForm">
+            <div class="form-group">
+              <label for="distance">Distance (km)</label>
+              <input type="number" id="distance" step="0.01" placeholder="Enter distance" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="fuelPrice">Fuel Price (₹/L)</label>
+              <input type="number" id="fuelPrice" step="0.01" placeholder="Enter fuel price" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="mileage">Vehicle Mileage (km/L)</label>
+              <input type="number" id="mileage" step="0.01" placeholder="Enter mileage" required>
+            </div>
+            
+            <button type="submit" class="calculate-btn">Calculate Fuel Cost</button>
+          </form>
+          
+          <div id="fuelResult" class="result"></div>
+        </div>
+
+        <div class="calculator-card">
+          <h3>Trip Cost Calculator</h3>
+          <p>Estimate total trip expenses including driver costs and tolls</p>
+          
+          <form id="tripForm">
+            <div class="form-group">
+              <label for="tripDistance">Distance (km)</label>
+              <input type="number" id="tripDistance" step="0.01" placeholder="Enter distance" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="tripFuelPrice">Fuel Price (₹/L)</label>
+              <input type="number" id="tripFuelPrice" step="0.01" placeholder="Enter fuel price" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="tripMileage">Mileage (km/L)</label>
+              <input type="number" id="tripMileage" step="0.01" placeholder="Enter mileage" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="driverCost">Driver Cost (₹)</label>
+              <input type="number" id="driverCost" step="0.01" placeholder="Optional">
+            </div>
+            
+            <div class="form-group">
+              <label for="toll">Toll Charges (₹)</label>
+              <input type="number" id="toll" step="0.01" placeholder="Optional">
+            </div>
+            
+            <div class="form-group">
+              <label for="other">Other Expenses (₹)</label>
+              <input type="number" id="other" step="0.01" placeholder="Optional">
+            </div>
+            
+            <button type="submit" class="calculate-btn">Calculate Trip Cost</button>
+          </form>
+          
+          <div id="tripResult" class="result"></div>
+        </div>
+
+        <div class="calculator-card">
+          <h3>Distance Calculator</h3>
+          <p>Find distance between two locations in India</p>
+          
+          <form id="distanceForm">
+            <div class="form-group">
+              <label for="fromLocation">From Location</label>
+              <input type="text" id="fromLocation" placeholder="Enter starting point" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="toLocation">To Location</label>
+              <input type="text" id="toLocation" placeholder="Enter destination" required>
+            </div>
+            
+            <button type="submit" class="calculate-btn">Find Distance</button>
+          </form>
+          
+          <div id="distanceResult" class="result"></div>
+        </div>
+
+        <div class="calculator-card">
+          <h3>Cost Per KM</h3>
+          <p>Calculate your average cost per kilometer</p>
+          
+          <form id="costPerKmForm">
+            <div class="form-group">
+              <label for="totalCost">Total Cost (₹)</label>
+              <input type="number" id="totalCost" step="0.01" placeholder="Enter total cost" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="totalDistance">Total Distance (km)</label>
+              <input type="number" id="totalDistance" step="0.01" placeholder="Enter distance" required>
+            </div>
+            
+            <button type="submit" class="calculate-btn">Calculate Cost/KM</button>
+          </form>
+          
+          <div id="costPerKmResult" class="result"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 FleetGuide.in | Informational Website</p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
