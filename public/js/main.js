@@ -214,3 +214,124 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.calculator-card').forEach(card => {
   observer.observe(card);
 });
+
+// Animate feature cards on scroll
+document.querySelectorAll('.feature-card').forEach((card, index) => {
+  card.style.opacity = '0';
+  observer.observe(card);
+  card.addEventListener('animationend', () => {
+    card.style.opacity = '1';
+  });
+});
+
+// Animate step cards
+document.querySelectorAll('.step-card').forEach((card, index) => {
+  card.style.opacity = '0';
+  card.style.animationDelay = `${index * 0.1}s`;
+  observer.observe(card);
+  card.addEventListener('animationend', () => {
+    card.style.opacity = '1';
+  });
+});
+
+// Animate stats when visible
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const statNumber = entry.target.querySelector('.stat-number');
+      if (statNumber && !statNumber.classList.contains('animated')) {
+        animateNumber(statNumber);
+        statNumber.classList.add('animated');
+      }
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.stat-card').forEach(card => {
+  statsObserver.observe(card);
+});
+
+// Animate numbers counting up
+function animateNumber(element) {
+  const text = element.textContent;
+  const hasPlus = text.includes('+');
+  const hasStar = text.includes('★');
+  const value = parseFloat(text.replace(/[+,★]/g, ''));
+  
+  if (isNaN(value)) return;
+  
+  const duration = 2000;
+  const steps = 60;
+  const increment = value / steps;
+  let current = 0;
+  
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= value) {
+      current = value;
+      clearInterval(timer);
+    }
+    
+    let displayValue = Math.floor(current);
+    if (text.includes(',')) {
+      displayValue = displayValue.toLocaleString();
+    }
+    if (text.includes('.')) {
+      displayValue = current.toFixed(1);
+    }
+    
+    element.textContent = displayValue + (hasPlus ? '+' : '') + (hasStar ? '★' : '');
+  }, duration / steps);
+}
+
+// FAQ toggle functionality (if you want to make them collapsible later)
+document.querySelectorAll('.faq-item h3').forEach(question => {
+  question.style.cursor = 'pointer';
+  question.addEventListener('click', () => {
+    const answer = question.nextElementSibling;
+    const isOpen = answer.style.display === 'block';
+    
+    // Optional: Toggle answer visibility
+    // answer.style.display = isOpen ? 'none' : 'block';
+  });
+});
+
+// Smooth scroll for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Add hover effect to insight cards
+document.querySelectorAll('.insight-card').forEach(card => {
+  observer.observe(card);
+});
+
+// Add entrance animation to use case cards
+document.querySelectorAll('.use-case-card').forEach((card, index) => {
+  card.style.opacity = '0';
+  card.style.animationDelay = `${index * 0.15}s`;
+  observer.observe(card);
+  card.addEventListener('animationend', () => {
+    card.style.opacity = '1';
+  });
+});
+
+// Track calculator usage (for analytics - optional)
+document.querySelectorAll('.calculate-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const calculatorType = e.target.closest('.calculator-card').querySelector('h3').textContent;
+    console.log(`Calculator used: ${calculatorType}`);
+    // You can send this to Google Analytics if set up:
+    // gtag('event', 'calculator_use', { calculator_type: calculatorType });
+  });
+});
+
