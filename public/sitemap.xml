@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://fleetguide.in/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-02-10</lastmod>
+  </url>
+  
+  <!-- Main Pages -->
+  <url>
+    <loc>https://fleetguide.in/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fleetguide.in/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-02-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fleetguide.in/privacy-policy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-02-10</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://fleetguide.in/terms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-02-10</lastmod>
+  </url>
+  
+  <!-- GPS Guides -->
+  <url>
+    <loc>https://fleetguide.in/gps-guides</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-10</lastmod>
+  </url>
+  
+  <!-- Transport Rules -->
+  <url>
+    <loc>https://fleetguide.in/transport-rules</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-10</lastmod>
+  </url>
+  
+  <!-- Calculators -->
+  <url>
+    <loc>https://fleetguide.in/calculators</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-10</lastmod>
+  </url>
+  
+  <!-- Fleet Reviews -->
+  <url>
+    <loc>https://fleetguide.in/fleet-reviews</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-10</lastmod>
+  </url>
+  
+</urlset>

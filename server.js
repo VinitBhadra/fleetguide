@@ -38,6 +38,18 @@ app.get('/privacy-policy', (req, res) => {
   res.render('privacy-policy');
 });
 
+app.get('/about', (req, res) => {
+  res.render('about');
+});
+
+app.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
+app.get('/terms', (req, res) => {
+  res.render('terms');
+});
+
 // API endpoint for calculator
 app.post('/api/calculate', (req, res) => {
   const { type, data } = req.body;

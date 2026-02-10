@@ -1,0 +1,22 @@
+# robots.txt for FleetGuide.in
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://fleetguide.in/sitemap.xml
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow admin or private areas (if any in future)
+# User-agent: *
+# Disallow: /admin/
+# Disallow: /private/
